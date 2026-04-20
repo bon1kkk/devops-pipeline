@@ -1,0 +1,21 @@
+name: CI Pipeline
+
+on: [push]
+
+jobs:
+  buil:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          echo "Building..."
+          mkdir build
+          echo "CI works" > build/index.html
+
+      - name: Test
+        run: |
+          echo "Testing..."
+          grep "CI works" build/index.html
