@@ -11,7 +11,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker biuld -t myapp
+          docker biuld -t myapp .
           docker images
 
       - name: Run container and test
